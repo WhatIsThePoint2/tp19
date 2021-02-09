@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tp1</title>
+</head>
+<body>
+   Nom et prenom: <input type="text" name="name" id="name"><br>
+   adress mail: <input type="email" name="mail" id="mail"><br>
+   <button onclick="add()">Ajouter</button>
+   <button onclick="supp()">Supprimer</button>
+   <button onclick="lf()">Chercher</button><br>
+    <select id="list">
+       
+
+      </select>
+      <script>
+            function add() {
+            var x = document.getElementById("list");
+            var y = document.getElementById("name").value;
+            var op = document.createElement("option");
+            if (y.length==0){
+                alert("entrez un nom valid")
+            }
+            else
+            {
+                op.text = y;
+                x.add(op); 
+            }
+            for (var i=0; i<x.options.length; i++)
+           { 
+            if (x.options[i].text == y) 
+            { 
+             alert('entrez un autre nom ');
+            }
+            else{
+                op.text = y;
+                x.add(op); 
+            }
+        }
+            }
+            function supp() {
+                var x = document.getElementById("list");
+                x.remove(x.selectedIndex);
+                
+            }
+            function lf() {
+                var x = document.getElementById("list");
+                var y = document.getElementById("name").value;
+                for (var i=0; i<x.options.length; i++)
+           { 
+            if (x.options[i].text == y) 
+            { 
+             alert('le nom existe ');
+            }
+            else{
+               alert("nope")
+            }
+        }
+            }
+                
+                
+            
+           
+      </script>
+</body>
+</html>
